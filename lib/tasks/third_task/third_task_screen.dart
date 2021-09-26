@@ -35,6 +35,7 @@ class _ThirdTaskScreenState extends State<ThirdTaskScreen> {
               title: Text('Cinema App'),
               titleSpacing: -10,
             ),
+            backgroundColor: Colors.white,
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: bloc.currentIndex,
               onTap: (index) {

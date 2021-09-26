@@ -13,17 +13,32 @@ class FavoriteScreen extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         var bloc = CinemaCubit.get(context);
-        return ListView.builder(
-          physics: BouncingScrollPhysics(),
-          itemBuilder: (context, index) => movieBuilder(
-            bloc.favModel[index],
-            true,
-            () {
-              bloc.editFav(bloc.favModel[index]);
-            },
-          ),
-          itemCount: bloc.favModel.length,
-        );
+        return bloc.favModel.length == 0
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(width: double.infinity),
+                  Image.asset(
+                    'images/3298067.jpg',
+                    height: MediaQuery.of(context).size.height * .5,
+                  ),
+                  Text(
+                    'No Favorites Yet!',
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                  )
+                ],
+              )
+            : ListView.builder(
+                physics: BouncingScrollPhysics(),
+                itemBuilder: (context, index) => movieBuilder(
+                  bloc.favModel[index],
+                  true,
+                  () {
+                    bloc.editFav(bloc.favModel[index]);
+                  },
+                ),
+                itemCount: bloc.favModel.length,
+              );
       },
     );
   }

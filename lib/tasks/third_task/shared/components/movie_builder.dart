@@ -9,6 +9,7 @@ Widget movieBuilder(ResultModel model, bool inFav, Function onClick) {
     padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
     height: 289,
     child: Card(
+      elevation: 5,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 8,
