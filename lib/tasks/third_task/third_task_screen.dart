@@ -37,6 +37,7 @@ class _ThirdTaskScreenState extends State<ThirdTaskScreen> {
             ),
             backgroundColor: Colors.white,
             bottomNavigationBar: BottomNavigationBar(
+              backgroundColor: Colors.white,
               currentIndex: bloc.currentIndex,
               onTap: (index) {
                 bloc.changeCurrentIndex(index);
